@@ -1,0 +1,38 @@
+---------------------------------------------
+Python - Word Occurence Counter of Input File
+---------------------------------------------
+This is a simple python based application that takes a UTF-8 text file as input and gives the total number of words in the file and the top 10 most common words with their occurence count.
+
+
+--------------------------
+Assumptions/Constraints
+--------------------------
+1. Do not use Collections.Counter class
+2. Implement the input file as part of command line arguments to python execution
+3. PEP-8 level code organization best practices
+4. Implement a test suite with tests.py file
+
+--------------------------
+Solution:
+--------------------------
+The program accepts an input file (UTF - 8) as an argument in the command line execution statement as follows:
+
+python <app.py> <input_data_file>
+
+The program first checks for the "file present" condition with try catch blocks. The input file is then opened and checked for "empty file" condition and whitespaces. 
+
+The separator for identifying words is a whitespace. The separated words are then sent through a cleaning function that removes wild characters and special characters. Only alphanumeric values are returned back for the next stage.
+
+A Dictionary variable is used to store each word and its occurence count as it offers a key-value based structure that we need for this activity.
+
+The dictionary is sorted using the sort built in method. This was chosen rather than implementing a quick or merge sort logic as the compiler optimizes the best sorting alogorithm. The sort method takes a key for sorting which in this case is the number of occurences of each word.
+
+The python lambda function offers an anonymous function with default input. For the dictionary d, the values field is d[1] and the key is d[0]. The sorting function uses the values field and the keyword "reverse = True" and sorts the dictionary in the descending order.
+
+The final result is then returned to the calling function.
+
+---------------------
+Testing
+---------------------
+The test suite can be executed by running "python tests.py"
+
